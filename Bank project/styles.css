@@ -1,0 +1,52 @@
+.container {
+     height: 100vh;
+}
+
+.form-content {
+     border-radius: 5px;
+     width: 100%;
+}
+
+.input-field input {
+     border-radius: 0.25rem;
+}
+
+/* bank details style */
+
+.bank-details {
+     width: 100%;
+     display: none;
+}
+
+.deposit {
+     border-radius: 5px;
+     padding: 10px 15px;
+     background-color: darkgreen;
+}
+
+.withdraw {
+     border-radius: 5px;
+     padding: 10px 15px;
+     background-color: darkorange;
+}
+
+.balance {
+     border-radius: 5px;
+     padding: 10px 15px;
+     background-color: darkblue;
+}
+
+.submit-area {
+     margin-top: 30px;
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+     padding: 30px 30px;
+     border-radius: 5px;
+}
+
+.message {
+     display: none;
+     font-weight: 600;
+     color: red;
+}

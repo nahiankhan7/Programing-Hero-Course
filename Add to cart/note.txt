@@ -1,0 +1,55 @@
+const product1 = {
+  minusButton: document.getElementById("minusBtn1"),
+  plusButton: document.getElementById("plusBtn1"),
+  quantityInput: document.getElementById("qtyInput1"),
+  price: document.getElementById("price1"),
+  unitPrice: 50
+};
+
+const product2 = {
+  minusButton: document.getElementById("minusBtn2"),
+  plusButton: document.getElementById("plusBtn2"),
+  quantityInput: document.getElementById("qtyInput2"),
+  price: document.getElementById("price2"),
+  unitPrice: 15
+};
+
+const subTotal = document.getElementById("subtotal");
+const tax = document.getElementById("tax");
+const total = document.getElementById("total");
+const checkOutButton = document.getElementById("checkOut");
+
+function changeProductQuantity(product, isIncrease) {
+  let quantity = parseInt(product.quantityInput.value) || 0;
+  if (isIncrease) {
+    quantity++;
+  } else if (quantity > 0) {
+    quantity--;
+  }
+  product.quantityInput.value = quantity;
+  product.price.innerText = `$${(quantity * product.unitPrice).toFixed(2)}`;
+  calculateTotal();
+}
+
+function calculateTotal() {
+  const product1Quantity = parseInt(product1.quantityInput.value) || 0;
+  const product2Quantity = parseInt(product2.quantityInput.value) || 0;
+
+  const totalPrice = (product1Quantity * product1.unitPrice) + (product2Quantity * product2.unitPrice);
+  subTotal.innerText = `$${totalPrice.toFixed(2)}`;
+
+  const taxAmount = totalPrice * 0.05;
+  tax.innerText = `$${taxAmount.toFixed(2)}`;
+
+  const grandTotal = totalPrice + taxAmount;
+  total.innerText = `$${grandTotal.toFixed(2)}`;
+}
+
+product1.minusButton.addEventListener("click", () => changeProductQuantity(product1, false));
+product1.plusButton.addEventListener("click", () => changeProductQuantity(product1, true));
+product2.minusButton.addEventListener("click", () => changeProductQuantity(product2, false));
+product2.plusButton.addEventListener("click", () => changeProductQuantity(product2, true));
+
+checkOutButton.addEventListener("click", () => {
+  alert("Added to cart successfully");
+});

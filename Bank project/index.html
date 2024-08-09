@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexBank</title>
+    <!-- CSS link here -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Bootstrap CSS CDN for styling -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div
+      class="container bg-light d-flex align-items-center justify-content-center">
+      <div class="form-content bg-white shadow-lg p-5" id="allContent">
+        <h1 class="text-center mb-5">Welcome to NexBank</h1>
+        <h3 class="mb-4">Login</h3>
+        <div class="input-field">
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required />
+          </div>
+          <p id="errorMessage" class="message">
+            Please fill up the input field.
+          </p>
+          <button
+            type="submit"
+            id="loginButton"
+            class="btn btn-success btn-block">
+            Enter
+          </button>
+        </div>
+      </div>
+      <div class="bank-details" id="bankDetails">
+        <h1 class="text-center mb-5">Bank Details</h1>
+        <div class="row text-white">
+          <div class="col-md-4">
+            <div class="deposit">
+              <h5>Deposit</h5>
+              <h2>$ <span id="currentDeposit">00</span></h2>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="withdraw">
+              <h5>Withdraw</h5>
+              <h2>$ <span id="currentWithdraw">00</span></h2>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="balance">
+              <h5>Balance</h5>
+              <h2>$ <span id="currentBalance">1240</span></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="submit-area bg-white shadow">
+              <h4>Deposit</h4>
+              <input
+                id="depositAmount"
+                type="text"
+                class="form-control p-3"
+                placeholder="$ amount you want to deposit" />
+              <button id="deposit" class="btn btn-success">Deposit</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="submit-area bg-white shadow">
+              <h4>Withdraw</h4>
+              <input
+                id="withdrawAmount"
+                type="text"
+                class="form-control p-3"
+                placeholder="$ amount you want to withdraw" />
+              <button id="withdraw" class="btn btn-success">Withdraw</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="./bank.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pin Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="pin-generator half-width">
+            <input
+              id="generatePinInput"
+              class="form-control"
+              type="text"
+              placeholder="Generated Pin" />
+            <button id="generatePinButton" class="generate-btn btn btn-primary">
+              Generate Pin
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input-section half-width">
+            <input
+              id="calcInput"
+              class="form-control"
+              type="text"
+              placeholder="Enter Pin" />
+            <div class="numbers">
+              <div class="calc-body">
+                <div class="calc-button-row">
+                  <div class="button btn btn-secondary">7</div>
+                  <div class="button btn btn-secondary">8</div>
+                  <div class="button btn btn-secondary">9</div>
+                </div>
+                <div class="calc-button-row">
+                  <div class="button btn btn-secondary">4</div>
+                  <div class="button btn btn-secondary">5</div>
+                  <div class="button btn btn-secondary">6</div>
+                </div>
+                <div class="calc-button-row">
+                  <div class="button btn btn-secondary">1</div>
+                  <div class="button btn btn-secondary">2</div>
+                  <div class="button btn btn-secondary">3</div>
+                </div>
+                <div class="calc-button-row">
+                  <div class="button btn btn-secondary">&lt;</div>
+                  <div class="button btn btn-secondary">0</div>
+                  <div class="button btn btn-secondary">C</div>
+                </div>
+                <div>
+                  <button
+                    id="submitButton"
+                    type="submit"
+                    class="submit-btn btn btn-success">
+                    Submit
+                  </button>
+                  <p class="action-left mt-2">3 tries left</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="notify-section mt-3">
+        <p id="errorMsg" class="notify text-danger">
+          ❌ Pin Didn't Match, Please try again
+        </p>
+        <p id="doneMsg" class="notify text-success">
+          ✅ Pin Matched... Secret door is opening for you
+        </p>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

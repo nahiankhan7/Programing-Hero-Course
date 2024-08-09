@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="all-content">
+        <!-- first cart -->
+        <div class="cart">
+          <div class="product">
+            <img
+              src="./images/vape-z200.png"
+              width="120px"
+              alt="geekVape z200" />
+            <p>GeekVape Z200</p>
+          </div>
+          <div class="product-details">
+            <div class="quantity">
+              <button
+                type="button"
+                id="minusBtn1"
+                onclick="changeProductQuantity1(false);">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input type="text" value="1" id="qtyInput1" />
+              <button
+                type="button"
+                id="plusBtn1"
+                onclick="changeProductQuantity1(true);">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <h5>$ <span id="price1">50</span></h5>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <hr />
+        <!-- second cart -->
+        <div class="cart">
+          <div class="product">
+            <img src="./images/tank.jpeg" width="120px" alt="geekVape z200" />
+            <p>Smok Z Tank</p>
+          </div>
+          <div class="product-details">
+            <div class="quantity">
+              <button
+                type="button"
+                id="minusBtn2"
+                onclick="changeProductQuantity2(false);">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input type="text" value="1" id="qtyInput2" />
+              <button
+                type="button"
+                id="plusBtn2"
+                onclick="changeProductQuantity2(true);">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <h5>$ <span id="price2">15</span></h5>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <hr />
+        <!-- third cart -->
+        <div class="cart subtotal-cart">
+          <div class="total">
+            <p>Subtotal:</p>
+            <p>Tax:</p>
+            <p>Total:</p>
+          </div>
+          <div class="balance">
+            <h5 id="subtotal">$ 65</h5>
+            <h5 id="tax">$ 3.25</h5>
+            <h5 id="total">$ 68.25</h5>
+          </div>
+        </div>
+        <button type="button" id="checkOut">Check out</button>
+      </div>
+    </div>
+    <script src="./test.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+h5 {
+     font-size: 16px;
+}
+
+button {
+     padding: 5px 10px;
+     cursor: pointer;
+}
+
+.container {
+     margin: 0 auto;
+     height: 100vh;
+     width: 80%;
+}
+
+.all-content {
+
+     width: 100%;
+     padding: 10px 20px;
+     background-color: white;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.295);
+}
+
+.cart {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 20px 0;
+}
+
+.subtotal-cart {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin: 20px 50px;
+}
+
+.product {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 0 40px;
+}
+
+.product-details {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 0 50px;
+}
+
+.product-details .fa-xmark {
+     cursor: pointer;
+     font-size: 20px;
+     color: red;
+}
+
+#qtyInput {
+     border: none;
+     text-align: center;
+     width: 30px;
+     background-color: rgb(141, 252, 252);
+     padding: 8px 0;
+}

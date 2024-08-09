@@ -1,0 +1,65 @@
+document.addEventListener('DOMContentLoaded', function() {
+     const generatePinButton = document.getElementById('generatePinButton');
+     const generatePinInput = document.getElementById('generatePinInput');
+     const calcInput = document.getElementById('calcInput');
+     const submitButton = document.getElementById('submitButton');
+     const notifySection = document.querySelector('.notify-section');
+     const triesLeftElement = document.querySelector('.action-left');
+   
+     let generatedPin = '';
+     let triesLeft = 3;
+   
+     function generatePin() {
+       generatedPin = Math.floor(1000 + Math.random() * 9000).toString();
+       generatePinInput.value = generatedPin;
+     }
+   
+     function updateTriesLeft() {
+       triesLeftElement.textContent = `${triesLeft} tries left`;
+     }
+   
+     function checkPinMatch() {
+       const userPin = calcInput.value;
+       if (userPin === generatedPin) {
+         notifySection.querySelector('.text-success').style.display = 'block';
+         notifySection.querySelector('.text-danger').style.display = 'none';
+       } else {
+         notifySection.querySelector('.text-success').style.display = 'none';
+         notifySection.querySelector('.text-danger').style.display = 'block';
+         triesLeft--;
+         updateTriesLeft();
+         if (triesLeft === 0) {
+           submitButton.disabled = true;
+         }
+       }
+     }
+   
+     generatePinButton.addEventListener('click', generatePin);
+   
+     submitButton.addEventListener('click', function() {
+       if (triesLeft > 0) {
+         checkPinMatch();
+       }
+     });
+   
+     // Event delegation for calculator buttons
+     document.querySelector('.calc-body').addEventListener('click', function(event) {
+       if (event.target.classList.contains('button')) {
+         const value = event.target.textContent;
+   
+         if (value === 'C') {
+           calcInput.value = '';
+         } else if (value === '<') {
+           calcInput.value = calcInput.value.slice(0, -1);
+         } else {
+           calcInput.value += value;
+         }
+       }
+     });
+   
+     // Initial state
+     notifySection.querySelector('.text-success').style.display = 'none';
+     notifySection.querySelector('.text-danger').style.display = 'none';
+     updateTriesLeft();
+   });
+   
