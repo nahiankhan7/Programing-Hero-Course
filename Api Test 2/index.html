@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .user-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .user-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .user-img img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .user-bio {
+        text-align: left;
+        line-height: 1.6;
+      }
+
+      .bio-item {
+        display: flex;
+        gap: 0 10px;
+        margin-bottom: 12px;
+      }
+
+      .bio-item strong {
+        display: block;
+        font-weight: 600;
+        color: #555;
+      }
+
+      .bio-item span,
+      .bio-item a {
+        color: #333;
+        font-weight: 400;
+        text-decoration: none;
+      }
+
+      a {
+        color: #007bff !important;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
+        .user-card {
+          padding: 15px;
+          max-width: 90%;
+        }
+
+        .user-img img {
+          width: 100px;
+          height: 100px;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .bio-item {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="user-card">
+        <div class="user-img">
+          <img src="" id="image" alt="Profile Picture" />
+        </div>
+        <h2 id="user-name"></h2>
+        <div class="user-bio">
+          <div class="bio-item">
+            <strong>Gender:</strong> <span id="gender"></span>
+          </div>
+          <div class="bio-item">
+            <strong>Age:</strong> <span id="age"></span>
+          </div>
+          <div class="bio-item">
+            <strong>Email:</strong>
+            <a href="mailto:examlpe@gmail.com" id="email"></a>
+          </div>
+          <div class="bio-item">
+            <strong>Phone:</strong> <span id="number"></span>
+          </div>
+          <div class="bio-item">
+            <strong>Location:</strong>
+            <span id="location"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
