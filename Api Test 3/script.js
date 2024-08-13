@@ -21,23 +21,39 @@ function callWeather(city) {
       const temp = document.getElementById("temp");
       temp.innerHTML = data.main.temp;
 
-      // Get weather icon and name
-      if (data.weather[0].main === "Clouds") {
-        weatherIcon.src = "images/cloudy.png";
-        weatherName.innerText = "Cloudy";
-      } else if (data.weather[0].main === "Clear") {
-        weatherIcon.src = "images/sun.png";
-        weatherName.innerText = "Clear";
-      } else if (data.weather[0].main === "Rain") {
-        weatherIcon.src = "images/rainy.png";
-        weatherName.innerText = "Rain";
-      } else if (data.weather[0].main === "Drizzle") {
-        weatherIcon.src = "images/storm.png";
-        weatherName.innerText = "Drizzle";
-      } else if (data.weather[0].main === "Mist") {
-        weatherIcon.src = "images/fog.png";
-        weatherName.innerText = "Foggy";
+      const icon = data.weather[0].main;
+      let img = "";
+      let text = "";
+
+      switch (icon) {
+        case "Clouds":
+          img = "images/cloudy.png";
+          text = "Cloudy";
+          break;
+
+        case "Clear":
+          img = "images/sun.png";
+          text = "Clear";
+          break;
+
+        case "Rain":
+          img = "images/rainy.png";
+          text = "Rain";
+          break;
+        case "Drizzle":
+          img = "images/storm.png";
+          text = "Drizzle";
+          break;
+
+        case "Mist":
+          img = "images/fog.png";
+          text = "Foggy";
+          break;
+        default:
+          console.log("miss match");
       }
+      weatherIcon.src = img;
+      weatherName.innerText = text;
     })
     .catch((error) => console.log("Error fetching weather data:", error));
 }
