@@ -27,4 +27,19 @@ const heroBill = person.chargeBill.bind(heroPerson);
 person.chargeBill.call(heroPerson, 900, 25, 25);
 console.log(heroPerson.salary);
 
-//apply method and use parameter like array []
+// make all object shorter using class object method
+class Person {
+  constructor(firstName, lastName, salary) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.salary = salary;
+  }
+}
+const firstPerson = new Person("Alex", "Rio", 2000);
+console.log(firstPerson);
+const secondPerson = new Person("Neo", "Jax", 5000);
+console.log(secondPerson);
+
+// apply method and use parameter like array []
+const test = person.chargeBill.apply(firstPerson, [500, 500, 10]);
+console.log(test);
